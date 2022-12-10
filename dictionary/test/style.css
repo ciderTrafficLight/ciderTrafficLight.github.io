@@ -1,0 +1,32 @@
+table {
+  border-collapse: collapse;
+  position: relative;
+  margin: 0px;
+}
+td {
+  border: 1px solid #333;
+  border-collapse: collapse;
+  font-size: 18px;
+  position: relative;
+}
+
+thead {
+  color: #000;
+  border-width: 1px;
+}
+
+.small {
+  position: absolute;
+  top: -13px;
+  left: 0px;
+  font-size: 10px;
+  color: #808080;
+  --webkit-select: none;
+}
+
+img.seigyoki {
+  width: 500px;
+}
+img.meiban {
+  width: 450px;
+}

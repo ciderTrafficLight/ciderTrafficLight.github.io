@@ -1,0 +1,9 @@
+.banner{
+position: fixed;
+right: 10px;
+bottom: 10px;
+z-index: 10000;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0px 0px 10px 3px;
+}

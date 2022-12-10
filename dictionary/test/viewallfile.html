@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "initial-scale=1">
+    <title>一覧を作成する</title>
+  </head>
+  <body>
+    <h1>一覧を作成する</h1>
+    <form>
+      <p>ディレクトリ名：<input type="text" id="fsDirname" value="/"></p>
+      <input type="button" value="一覧を作成" id="createList">
+    </form>
+    <output id="result" ></output>
+    <script>
+      // クリックされたらディレクトリ内の一覧を作成する
+      document.getElementById("createList").addEventListener("click", function(){
+        window.webkitRequestFileSystem(
+          TEMPORARY,  // 一時的（テンポラリ）
+          0,    // 確保するサイズ
+          function(fs){ // 成功時のコールバック関数
+            // 一覧を生成
+            var dirname = document.getElementById("fsDirname").value;
+            fs.root.getDirectory(dirname, {},
+              function(dirEntry){
+                var dirReader = dirEntry.createReader();
+                dirReader.readEntries(
+                  function(list){
+                    // 表示先の内容を消去
+                    document.getElementById("result").innerHTML = "";
+                    // ファイル／ディレクトリの数だけ繰り返し
+                    for(var i=0; i<list.length; i++){
+                      var text = document.getElementById("result").innerHTML;
+                      if (list[i].isFile){  // ファイルの場合
+                        text += "[F]";
+                      }else{
+                        text += "[D]";
+                      }
+                      text += list[i].name+"<br>";
+                      document.getElementById("result").innerHTML = text;
+                    }
+                  },
+                  function(err){  // 失敗時のコールバック関数
+                    document.getElementById("result").innerHTML = "一覧エラー!!<br>"+err;
+                  }
+                );
+              },
+              function(err){  // 失敗時のコールバック関数
+                document.getElementById("result").innerHTML = "一覧取得エラー!!<br>"+err;
+              }
+            );
+          },
+          function(err){  // 失敗時のコールバック関数
+            document.getElementById("result").innerHTML = "エラー!!<br>"+err;
+          }
+        );
+      }, false);
+    </script>
+  </body>
+</html>

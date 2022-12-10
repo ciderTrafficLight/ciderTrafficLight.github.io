@@ -1,0 +1,52 @@
+@import url("font.css");
+
+.input {
+  border-radius: 5px;
+  width: 1280px;
+  height: 30px;
+  font-size: 15px;
+  border: 2px solid #c4c4c4;
+  padding: 2px;
+  text-indent: 0.5em;
+  transition: all 0.5s 0s ease;
+}
+.input:focus {
+  border-color: #b3b3b3;
+  box-shadow: 0 0 25px 0 rgba(0, 221, 255, 0.5);
+  outline: none;
+}
+.input:hover {
+  border-color: #b3b3b3;
+}
+
+.button {
+  padding: 5px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #c4c4c4;
+  font-size: 15px;
+  transition: all 0.5s 0s ease;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #fff;
+  border: 2px solid #7a7a7a;
+}
+.button:focus {
+  box-shadow: 0 0 25px 5px rgba(0, 221, 255, 0.5);
+}
+
+textarea{
+  transition: all 0.5s 0s ease;
+  border-radius: 5px;
+}
+textarea:focus {
+  box-shadow: 0 0 25px 5px rgba(0, 221, 255, 0.5);
+  outline: none;
+}
+
+.cider:focus {
+  background-image: url("https://ss1.xrea.com/mitsuyacider.s223.xrea.com/background_cider_light.gif");
+  transition: all 0.5s 0s ease;
+}

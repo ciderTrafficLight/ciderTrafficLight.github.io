@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+body {
+  font-family: "Noto Sans JP", "hiraginomarugo Pro W4", "MS Pゴシック", suns-serif;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 45px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 18px;
+}
+
+a:link {
+color: #00ddff;
+text-decoration: none;
+}
+a:hover{
+color: #00ddff;
+text-decoration: underline;
+}
+a:visited {
+color: #33c;
+}
+
+red {
+  color: #ff0000;
+}
+
+blue {
+  color: #0000ff;
+}
+
+green {
+  color: #008000;
+}
+
+rightgreen {
+  color: #00ff00;
+}
+
+pink {
+  color: #ec008c;
+}
+
+rightblue {
+  color: #00b7cc;
+}
+
+orange {
+  color: #fd7e00;
+}
+
+yellow {
+  color: #ffff00;
+}
+
+purple {
+  color: #9900ff;
+}
+
+button {
+  font-family: "Kosugi Maru", suns-serif;
+}
+
+input {
+  font-family: "Kosugi Maru", "hiraginomarugo Pro W4", "MS Pゴシック", suns-serif;
+}

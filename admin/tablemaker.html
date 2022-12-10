@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf8" />
+    <title>test</title>
+    <link rel="stylesheet" href="tablemaker.css" />
+    <script src="tablemaker.js"></script>
+  </head>
+  <body>
+    <label>title<input type="text" id="title" /></label><br /><br />
+    <div name="parent" style="position: relative;">
+      <div style="width: 50%; height: 80%; position: absolute; left: 0px;">
+        <table style="width: 100%;">
+          <tbody>
+            <tr>
+              <td style="width: 50%; height: 30px;">
+                <p class="small">製造メーカー</p>
+                <input type="text" id="seizousho" />
+              </td>
+              <td style="width: 50%;">
+                <p class="small">仕様書番号</p>
+                <input type="text" id="siyousho" style="width: 70px;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 15%; writing-mode: vertical-rl;">制御機</td>
+            <td style="width: 85%;">
+              <label>画像のURLを入力<input type="text" id="seigyoki" /></label>
+            </td>
+          </tr>
+          <tr>
+            <td style="writing-mode: vertical-rl;">銘板</td>
+            <td>
+              <label>画像のURLを入力<input type="text" id="meiban" /></label>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="width: 50%; position: absolute; right: 0px;">
+        <table style="width: 100%; height: 100%;">
+          <tbody style="height: 100%;">
+            <tr style="height: 33px;">
+              <td colspan="2">
+                <center><input type="text" id="meishou" /></center>
+              </td>
+            </tr>
+            <tr style="height: 30px;">
+              <td>
+                <p class="small">形式</p>
+                <input type="text" id="keisiki" />
+              </td>
+              <td>
+                <p class="small">製造年月</p>
+                <input type="text" id="seizounengetu" />
+              </td>
+            </tr>
+            <tr style="height: 30px;">
+              <td>
+                <p class="small">交差点名</p>
+                <input type="text" id="kousatenmei" />
+              </td>
+              <td>
+                <p class="small">交差点番号</p>
+                <input type="text" id="kousatenbangou" />
+              </td>
+            </tr>
+            <tr style="height: 390px;">
+              <td colspan="2" style="height: 100%;">
+                <p class="small">コメント</p>
+                <input type="text" id="komento" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button
+      style="position: fixed; right: 10px; bottom: 10px;"
+      onclick="main()"
+    >
+      run
+    </button>
+    <br />
+    <div id="result" style="position: absolute; top: 500px;"></div>
+  </body>
+</html>
