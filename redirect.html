@@ -5,7 +5,7 @@
     <title>Redirecting...</title>
     <script>
       function error(){
-        document.write('<h1 style="background-color: #ff0000;">転送できません。転送設定が間違っているか、転送先のページが見つかりません</h1>')
+        document.getElementsByTagName('h1')[0].innerHTML = '<h1 style="background-color: #ff0000;">転送できません。転送設定が間違っているか、転送先のページが見つかりません</h1>'
       }
       var query = location.search
       try{
