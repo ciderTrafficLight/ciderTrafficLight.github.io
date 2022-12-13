@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      function error(){
+        document.write('<h1 style="background-color: #ff0000;">転送できません。転送設定が間違っているか、転送先のページが見つかりません</h1>')
+      }
+      var query = location.search
+      try{
+        query = query.replace('?page=', '')
+      }chatch(e){
+        error()
+      }
+      window.open('https://cidertrafficlight.github.io' + query)
+  </head>
+  <body>
+    <h1>This is redirecting page</h1>
+  </body>
+</html>
