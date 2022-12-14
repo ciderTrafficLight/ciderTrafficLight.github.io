@@ -5,33 +5,24 @@
     <title>Redirecting...</title>
     <script>
       function error(){
-        document.getElementsByTagName('h1')[0].innerHTML = '<h1 style="background-color: #000; color: #ff0000;">転送できません。転送設定が間違っているか、転送先のページが見つかりません</h1>'
+        document.getElementsByTagName('h1')[0].innerHTML = '<h1 style="background-color: #ff0000;">転送できません。転送設定が間違っているか、転送先のページが見つかりません</h1>'
       }
       const main = () => {
       console.log('redirecting...')
       var query = location.search
       console.log(query)
-        if(query = null){
-          console.log('error')
-          document.write('error')
-        } else{
       try{
-        query = query.replace("?url=", "")
-        console.log(query)
+        query = query.replace('?url=', '')
       }catch(e){
         error()
-        console.log(e)
       }
       console.log('redirecting...')
-          if(query !== null){
       location.href = 'https://cidertrafficlight.github.io' + query
-      }
-        }
       }
       setInterval(main, 1000)
     </script>
   </head>
   <body>
-    <h1 id="h1">redirecting</h1>
+    <h1>This is redirecting page</h1>
   </body>
 </html>
