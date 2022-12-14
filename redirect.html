@@ -17,8 +17,10 @@
         } else{
       try{
         query = query.replace('?url=', '')
+        console.log(query)
       }catch(e){
         error()
+        console.log(e)
       }
       console.log('redirecting...')
           if(query !== null){
