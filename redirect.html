@@ -20,9 +20,19 @@
       location.href = 'https://cidertrafficlight.github.io' + query
       }
       setInterval(main, 1000)
+      function display(){
+        var h1 = document.getElementById('h1')
+        h1 = h1.replace('redirecting', '')
+        h1 = h1.length
+        if(h1!==3){
+          h1.innerHTML = 'redirecting'
+        } else {
+          h1.innerHTML += '.'
+        }
+      }
     </script>
   </head>
   <body>
-    <h1>This is redirecting page</h1>
+    <h1 id="h1">redirecting</h1>
   </body>
 </html>
