@@ -21,8 +21,10 @@
         error()
       }
       console.log('redirecting...')
+          if(query !== null){
       location.href = 'https://cidertrafficlight.github.io' + query
       }
+        }
       }
       setInterval(main, 1000)
       const display= () => {
