@@ -11,6 +11,10 @@
       console.log('redirecting...')
       var query = location.search
       console.log(query)
+        if(query = null){
+          console.log('error')
+          document.write('error')
+        } else{
       try{
         query = query.replace('?url=', '')
       }catch(e){
@@ -19,8 +23,9 @@
       console.log('redirecting...')
       location.href = 'https://cidertrafficlight.github.io' + query
       }
+      }
       setInterval(main, 1000)
-      function display(){
+      const display= () => {
         var h1 = document.getElementById('h1')
         h1 = h1.replace('redirecting', '')
         h1 = h1.length
@@ -30,6 +35,7 @@
           h1.innerHTML += '.'
         }
       }
+      setInterval(display, '300')
     </script>
   </head>
   <body>
