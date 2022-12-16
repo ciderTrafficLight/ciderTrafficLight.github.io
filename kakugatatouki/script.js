@@ -8,6 +8,9 @@ function main() {
   var url = "";
   console.log("run2");
   console.log(query);
+  if(query === null){
+    window.open('?page=welcome', '_self')
+  }
   if (query.slice(0, 5) === "page=") {
     query = query.slice(5);
     console.log(query);
