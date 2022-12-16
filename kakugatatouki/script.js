@@ -8,7 +8,7 @@ function main() {
   var url = "";
   console.log("run2");
   console.log(query);
-  if(query === null){
+  if(query === null && query == ''){
     window.open('?page=welcome', '_self')
   }
   if (query.slice(0, 5) === "page=") {
