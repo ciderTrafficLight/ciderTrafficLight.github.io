@@ -125,6 +125,15 @@ padding: 10px;
 margin: 10px;
 background-color: #fcfc7c
 }
+  
+iflame.side_fixed{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border-width: 0px;
+  width: 100%;
+  height: 100%;
+  }
 </style>
 </head>
 <body>
@@ -154,7 +163,7 @@ background-color: #fcfc7c
 </div>
 
 <div class="side">
-<iframe src="sidebar.html" class="side">すみません<br>お知らせの読み込みに失敗しました</iframe>
+<iframe src="sidebar.html" class="side" id="side">すみません<br>お知らせの読み込みに失敗しました</iframe>
 </div>
 
 <div class="main">
@@ -196,6 +205,15 @@ function link_message(link, message) {
 alert(message)
 window.open(link, '_blank')
 }
+  
+  
+window.addEventListener('scroll',function(){
+var zahyou = window.pageYOffset
+console.log(zahyou)
+  const tar = document.getElementById('side')
+  if(zahyou > 608){
+  tar.className = 'side_fixed'
+  }
 </script>
 <div class="banner" id="banner_popvideo">
 <div style="position: relative;">
