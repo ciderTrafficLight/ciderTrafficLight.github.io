@@ -227,12 +227,13 @@ console.log(zahyou)
     return false;
   }
 }
+  const url = new URL(window.location.href)
   if(smartphone()){
     console.log('smartphone')
-    window.location('_self', '?device=smartphone')
+    url.searchParams.set('device', 'mobile')
   }else{
-    window.location('_self', '?device=pc')
     console.log('personal computer')
+    url.searchParams.set('device', 'pc')
   }
 </script>
 <div class="banner" id="banner_popvideo">
