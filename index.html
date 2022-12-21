@@ -219,6 +219,21 @@ console.log(zahyou)
   }
   }
   )
+  function smartphone() {
+  // UserAgentからのスマホ判定
+  if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+  if(smatphone()){
+    console.log('smartphone')
+    window.location('_self', '?device=smartphone')
+  }else{
+    window.location('_self', '?device=pc')
+    console.log('personal computer')
+  }
 </script>
 <div class="banner" id="banner_popvideo">
 <div style="position: relative;">
