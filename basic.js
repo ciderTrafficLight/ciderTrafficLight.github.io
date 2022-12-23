@@ -12,3 +12,6 @@ function gotop(){
       console.log('no element named gototop was found')
     }
   }
+  }
+  )
+  }
