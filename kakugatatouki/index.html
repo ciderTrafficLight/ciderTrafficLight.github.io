@@ -19,7 +19,25 @@
         width: 94%;
         margin: 3%;
       }
+      button{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 10%;
+        height: 10%;
+      }
     </style>
+      <script>
+        document.write('<style id="style">p{width: 100%;}</style>')
+        function imgsize(){
+          const style = document.getElementById('style').value
+          console.log(style)
+          if(style == 'p{width: 100%;}'){
+            style.innerHTML = 'p{width: 30%;}'
+          }else{
+            style.innerHTML = "p{width: 100%;}"
+          }
+      </script>
   <p><img src="/image/kakugatatouki/kakugata1.jpg">　</p>
     <p><img src="/image/kakugatatouki/kakugata2.jpg">　</p>
     <p><img src="/image/kakugatatouki/kakugata3.jpg">　</p>
@@ -28,5 +46,6 @@
     <p><img src="/image/kakugatatouki/kakugata6.jpg">　</p>
     <p><img src="/image/kakugatatouki/kakugata7.jpg">　</p>
 </div>
+    <button onclick="imgsize()">表示切替</button>
   </body>
 </html>
