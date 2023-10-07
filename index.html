@@ -1,247 +1,295 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>cider信号</title>
-<link rel="stylesheet" href="cider.css">
-<link rel="stylesheet" href="banner.css">
-<link rel="icon" href="favicon.png">
-<style>
-/*body{
+  <meta charset="utf-8">
+  <title>cider信号</title>
+  <link rel="stylesheet" href="cider.css">
+  <link rel="stylesheet" href="banner.css">
+  <link rel="icon" href="favicon.png">
+  <style>
+    /*body{
 background-image: url("traffic_background.jpg");
 background-size: cover;
 background-position: top 0px;
 background-repeat: no-repeat;
 background-attachment: fixed;
 }*/
-.content{
-background-color: #fff;
-margin: 0px;
-width: 100%;
-}
+    body {
+      margin: 0px;
+    }
 
-.link{
-background-color: #091f51;
-position: absolute;
-top: 0px;
-width: 19.9%;
-font-size: 20px;
-height: 50px;
-color: snow;
-text-align: center;
-transition: all 0.5s 0s ease;
-}
-.link:hover{
-background-color: #3d467e;
-}
-a{
-white-space: nowrap;
-margin: 0px;
-border: 0px;
-padding: 0px;
-}
+    .content {
+      background-color: #fff;
+      margin: 0px;
+      width: 100%;
+    }
 
-li::marker{
-content: none;
-}
+    .link {
+      background-color: #091f51;
+      position: absolute;
+      top: 0px;
+      width: 19.9%;
+      font-size: 20px;
+      height: 50px;
+      color: snow;
+      text-align: center;
+      transition: all 0.5s 0s ease;
+    }
 
-.link_parent{
-position: relative;
-}
+    .link:hover {
+      background-color: #3d467e;
+    }
 
-.header_text{
-position: absolute; 
-left: 60%;
-top: 0px;
-}
+    a {
+      white-space: nowrap;
+      margin: 0px;
+      border: 0px;
+      padding: 0px;
+    }
 
-.main_parent{
-position: relative;
-width: 100%;
-top: 46px;
-}
-div.side{
-position: absolute;
-left: -5px;
-width: 20%;
-top: 138px;
-height: 1000px;
-}
-iframe.side{
-border-width: 0px;
-width: 100%;
-height: 100%;
-}
+    li::marker {
+      content: none;
+    }
 
-.main{
-position: absolute;
-left: 20%;
-width: 80%;
-top: 148px;
-}
+    .link_parent {
+      position: relative;
+    }
 
-.remove_popvideo{
-position: absolute;
-border-radius: 500px;
-right: 2px;
-top: 2px;
-background-color: #ff0000;
-border: none;
-font-size: 20px;
-width: 22px;
-height: 22px;
-color: #000;
-transition: all 0.5s 0s ease;
-position: absolute;
-top: 3px;
-right: 8px;
-}
-.remove_popvideo:hover{
-background-color: #fff;
-color: #ff0000;
-}
-.remove_popvideo_text{
-margin: 1px;
-font-size: 20px;
-height: 10px;
-width: 10px;
-position: absolute;
-top: -4px;
-right: 6px;
-cursor: pointer;
-}
+    .header_text {
+      position: absolute;
+      left: 60%;
+      top: 0px;
+    }
 
-.remove_popvideo_svg{
-cursor: pointer;
-stroke: #000;
-transition: all 0.5s 0s ease;
-}
-.remove_popvideo_svg:hover{
-stroke: #ff0000;
-}
+    .main_parent {
+      position: relative;
+      width: 100%;
+      top: 46px;
+    }
 
-.information{
-padding: 10px;
-margin: 10px;
-background-color: #fcfc7c
-}
-  
-div.side_fixed{
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  border-width: 0px;
-  width: 20%;
-  height: 100%;
-  }
-</style>
+    div.side {
+      position: absolute;
+      left: 0px;
+      width: 20%;
+      top: 138px;
+      height: 1000px;
+    }
+
+    iframe.side {
+      border-width: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .main {
+      position: absolute;
+      left: 20%;
+      width: 80%;
+      top: 148px;
+    }
+
+    .remove_popvideo {
+      position: absolute;
+      border-radius: 500px;
+      right: 2px;
+      top: 2px;
+      background-color: #ff0000;
+      border: none;
+      font-size: 20px;
+      width: 22px;
+      height: 22px;
+      color: #000;
+      transition: all 0.2s 0s ease;
+      position: absolute;
+      top: 3px;
+      right: 8px;
+    }
+
+    .remove_popvideo:hover {
+      background-color: #fff;
+      color: #ff0000;
+    }
+
+    .remove_popvideo_text {
+      margin: 1px;
+      font-size: 20px;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      top: -4px;
+      right: 6px;
+      cursor: pointer;
+    }
+
+    .remove_popvideo_svg {
+      cursor: pointer;
+      stroke: #000;
+      transition: all 0.2s 0s ease;
+    }
+
+    .remove_popvideo_svg:hover {
+      stroke: #ff0000;
+    }
+
+    .information {
+      padding: 10px;
+      margin: 10px;
+      background-color: #fcfc7c
+    }
+
+    div.side_fixed {
+      margin:0px;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      border-width: 0px;
+      width: 20%;
+      height: 100%;
+    }
+  </style>
 </head>
+
 <body>
-<div style="position: relative;">
-<img src="singoushuu.jpg" style="width:60%;">
-<div class="header_text">
-<div class="content" style="width: 100%;">
-<div height="10" name="kasamashi"></div>
-<h4 style="margin: 5px;">cider信号のページへようこそ！</h4>
-<p style="margin: 5px;">このページは、<a href="https://www.youtube.com/channel/UCgBlOKMSvPDzKbe9W4-NYEA" target=“_blank”>cider信号チャンネル</a>のサイトです。</p>
-</div>
-</div>
-</div>
-<div class="link_parent">
-<a href="https://google.com"><div class="link" style="left: 0%;"><p style="margin: 14px;">準備中</p></div></a>
-<!--<div style="cursor: pointer;" onclick="link_message('https://www.kikuya-rental.com/bbs/?owner_name=cidertrafficlight', 'この先、アクセスキーが求められますが、「cider」と入力してください')"><div class="link" style="left: 20%;"><p style="margin: 14px;">掲示板</p></div></div>-->
-<a href="javascript:console.log('掲示板は、twitterアカウントを作ったので一時閉鎖とします')"><div class="link" style="left: 20%;"><p style="margin: 14px;">準備中</p></div></a>
-<a href=""><div class="link" style="left: 40%;"><p style="margin: 14px;">準備中</p></div></a>
-<a href=""><div class="link" style="left: 60%;"><p style="margin: 14px;">準備中</p></div></a>
-<a href="https://twitter.com/cider_traffic"><div class="link" style="left: 80%;"><p style="margin: 14px;">Twitter</p></div></a>
-</div>
+  <div style="position: relative;">
+    <img src="singoushuu.jpg" style="width:60%;">
+    <div class="header_text">
+      <div class="content" style="width: 100%;">
+        <div height="10" name="kasamashi"></div>
+        <h4 style="margin: 5px;">cider信号のページへようこそ！</h4>
+        <p style="margin: 5px;">このページは、<a href="https://www.youtube.com/channel/UCgBlOKMSvPDzKbe9W4-NYEA"
+            target=“_blank”>cider信号チャンネル</a>のサイトです。</p>
+      </div>
+    </div>
+  </div>
+  <div class="link_parent">
+    <a href="https://google.com">
+      <div class="link" style="left: 0%;">
+        <p style="margin: 14px;">準備中</p>
+      </div>
+    </a>
+    <!--<div style="cursor: pointer;" onclick="link_message('https://www.kikuya-rental.com/bbs/?owner_name=cidertrafficlight', 'この先、アクセスキーが求められますが、「cider」と入力してください')"><div class="link" style="left: 20%;"><p style="margin: 14px;">掲示板</p></div></div>-->
+    <a href="javascript:console.log('掲示板は、twitterアカウントを作ったので一時閉鎖とします')">
+      <div class="link" style="left: 20%;">
+        <p style="margin: 14px;">準備中</p>
+      </div>
+    </a>
+    <a href="">
+      <div class="link" style="left: 40%;">
+        <p style="margin: 14px;">準備中</p>
+      </div>
+    </a>
+    <a href="">
+      <div class="link" style="left: 60%;">
+        <p style="margin: 14px;">準備中</p>
+      </div>
+    </a>
+    <a href="https://twitter.com/cider_traffic">
+      <div class="link" style="left: 80%;">
+        <p style="margin: 14px;">Twitter</p>
+      </div>
+    </a>
+  </div>
 
-<div class="main_parent">
+  <div class="main_parent">
 
-<div class="information">
-お知らせ：cider氏はまだまだ未熟ものなので、たまにサイトの表示がバグることがありますが、温かい目で見守っていただけると幸いです。たぶんすぐに（その日中に）治ると思います
-<br>なにか要望があれば、<a href="mailto:cidertrafficlight@s223.xrea.com?subject=cider信号ページの要望">メール</a>で教えて下さい
-</div>
+    <div class="information">
+      お知らせ：cider氏はまだまだ未熟ものなので、たまにサイトの表示がバグることがありますが、温かい目で見守っていただけると幸いです。たぶんすぐに（その日中に）治ると思います
+      <br>なにか要望があれば、<a href="mailto:cidertrafficlight@s223.xrea.com?subject=cider信号ページの要望">メール</a>で教えて下さい
+    </div>
 
-<div class="side" id="side">
-<iframe src="sidebar.html" class="side">すみません<br>お知らせの読み込みに失敗しました</iframe>
-</div>
+    <div class="side" id="side">
+      <iframe src="sidebar.html" class="side">すみません<br>お知らせの読み込みに失敗しました</iframe>
+    </div>
 
-<div class="main">
-<div class="content" style="background-color: #ccc;">
-<h3 style="margin-top: 0px; margin-bottom: 45px;">目次</h3>
-<h4><a href="#about_us">このチャンネルについて</a></h4>
-<h4><a href="#activity">このチャンネルの活動について</a></h4>
-</div>
+    <div class="main" id="main">
+      <div class="content" style="background-color: #dddddd;">
+        <h3 style="margin-top: 0px; margin-bottom: 45px;">目次</h3>
+        <h4><a href="#about_us">このチャンネルについて</a></h4>
+        <h4><a href="#activity">このチャンネルの活動について</a></h4>
+      </div>
 
-<div class="content">
-<h3 id="about_us">このチャンネルについて</h3>
-<p>このチャンネルは、もともと音響式信号好きのフデ五が、音響式信号機の情報を発信したいと思ったが、自分はgoogleアカウントを持っていないため、フデ五が動画を撮影、私ciderがYoutubeに投稿する、という仕組みで始まりました。最初の動画から一週間ほどで再生回数は100回を超え、意外に視聴者が多く、正直うれしいですw</p>
-<h4>フデ五氏について</h4>
-<p>フデ五は、信号機、バス、電車、お金など、広い範囲において詳しく知っているものです。フデ五というのも、昔作られていた五円玉は筆で描いたような明朝体でとてもレアなお金で、そのお金がフデ五と呼ばれているので、そこからとって「フデ五」という名前になりました。</p>
-<h4>ciderについて</h4>
-<p>このページを書いている私、ciderは、上で書いたようなフデ五が得意な分野での知識について、よく聞いていたことがきっかけで、フデ五と仲が良くなり、今回youtubeチャンネルを共同で運営することになりました。私はPCについて少し得意です。また、フデ五が得意な分野についても興味があり、そのためフデ五から送られてくる動画についても、「こんな信号機があるのか」と、とても楽しんでみています。このページも、ciderが更新していくと思います。</p>
-</div>
-<div class="content">
-<h3 id="activity">このチャンネルの活動について</h3>
-<p>このチャンネルの活動については、基本的に東京都内のみ、としています（今は）。ただ、たまに東京都以外の場所にいったり、東京都内の信号を全部回ってしまった場合は周辺の県での活動をする場合もあります。</p>
-</div>
-<script>
-console.log(location.hash)
-if(location.hash == null) {
-const url = location.protocol + '//' + location.host + '#head'
-console.log(url)
-document.getElementsByTagName('html').item(0).style.scrollBehavior = 'smooth'
-window.location.href= url
-}
-document.getElementsByTagName('html')[0].style.scrollBehavior = 'smooth'
+      <div class="content">
+        <h3 id="about_us">このチャンネルについて</h3>
+        <p>
+          このチャンネルは、もともと音響式信号好きのフデ五が、音響式信号機の情報を発信したいと思ったが、自分はgoogleアカウントを持っていないため、フデ五が動画を撮影、私ciderがYoutubeに投稿する、という仕組みで始まりました。最初の動画から一週間ほどで再生回数は100回を超え、意外に視聴者が多く、正直うれしいですw
+        </p>
+        <h4>フデ五氏について</h4>
+        <p>
+          フデ五は、信号機、バス、電車、お金など、広い範囲において詳しく知っているものです。フデ五というのも、昔作られていた五円玉は筆で描いたような明朝体でとてもレアなお金で、そのお金がフデ五と呼ばれているので、そこからとって「フデ五」という名前になりました。
+        </p>
+        <h4>ciderについて</h4>
+        <p>
+          このページを書いている私、ciderは、上で書いたようなフデ五が得意な分野での知識について、よく聞いていたことがきっかけで、フデ五と仲が良くなり、今回youtubeチャンネルを共同で運営することになりました。私はPCについて少し得意です。また、フデ五が得意な分野についても興味があり、そのためフデ五から送られてくる動画についても、「こんな信号機があるのか」と、とても楽しんでみています。このページも、ciderが更新していくと思います。
+        </p>
+      </div>
+      <div class="content">
+        <h3 id="activity">このチャンネルの活動について</h3>
+        <p>このチャンネルの活動については、基本的に東京都内のみ、としています（今は）。ただ、たまに東京都以外の場所にいったり、東京都内の信号を全部回ってしまった場合は周辺の県での活動をする場合もあります。</p>
+      </div>
+      <script>
+        console.log(location.hash)
+        if (location.hash == null) {
+          const url = location.protocol + '//' + location.host + '#head'
+          console.log(url)
+          document.getElementsByTagName('html').item(0).style.scrollBehavior = 'smooth'
+          window.location.href = url
+        }
+        document.getElementsByTagName('html')[0].style.scrollBehavior = 'smooth'
 
-function removepopvideo() {
-tar = document.getElementById('banner_popvideo')
-tar.style.boxShadow = 'none'
-tar.innerHTML = ""
-}
+        function removepopvideo() {
+          tar = document.getElementById('banner_popvideo')
+          tar.style.boxShadow = 'none'
+          tar.innerHTML = ""
+        }
 
-function link_message(link, message) {
-alert(message)
-window.open(link, '_blank')
-}
-  
-  
-window.addEventListener('scroll',function(){
-var zahyou = window.pageYOffset
-console.log(zahyou)
-  const tar = document.getElementById('side')
-  if(zahyou > 608){
-  tar.className = 'side_fixed'
-  }
-  else{
-    tar.className = 'side'
-  }
-  }
-  )
-  function smartphone() {
-  // UserAgentからのスマホ判定
-  if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-  const url = new URL(window.location.href)
-  if(smartphone()){
-    console.log('smartphone')
-    url.searchParams.set('device', 'mobile')
-  }else{
-    console.log('personal computer')
-    url.searchParams.set('device', 'pc')
-  }
-</script>
-  <script>
-  document.write('<div class="banner" id="banner_popvideo"><div style="position: relative;"><div class="remove_popvideo" onclick="removepopvideo()"><span class="remove_popvideo_text"><svg width="20" height="20" viewBox="0, 0, 400, 200" xmlns="http://www.w3.org/2000/svg" class="remove_popvideo_svg">  <line x1="0" y1="0" x2="250" y2="250" stroke-width="20"></line>  <line x1="250" y1="0" x2="0" y2="250" stroke-width="20"></line></svg></span></div><p style="position: absolute; left: 2px; top: -22px;">人気の動画</p><iframe style="margin-right: 8px; margin-left: 8px; margin-top: 20px; margin-bottom: -4px;" width="320" height="180" src="https://www.youtube.com/embed/uaGTJAYZS7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div></div>');
-  </script>
-  <noscript>
-    <p style="height: 8%; position: fixed; bottom: 3%; right: 3%; border-color: #000; border-width: 5px; background-color: #fff; font-size: 100%;">JavaScriptが無効になっているため、このサイトの一部の機能が制限されています。<br>制限をなくすには、ブラウザの設定からJavaScriptを有効化してください</p>
-  </noscript>
+        function link_message(link, message) {
+          alert(message)
+          window.open(link, '_blank')
+        }
+
+        const main_elem = document.getElementById('main')
+        var clientRect = main_elem.getBoundingClientRect()
+        var main_y = clientRect.top
+        window.addEventListener('scroll', function () {
+          var clientRect = main_elem.getBoundingClientRect()
+          var main_y = clientRect.top
+
+          console.log(main_y)
+          const tar = document.getElementById('side')
+          if (main_y <= 10) {
+            tar.className = 'side_fixed'
+          }
+          else {
+            tar.className = 'side'
+          }
+        }
+        )
+        function smartphone() {
+          // UserAgentからのスマホ判定
+          if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        const url = new URL(window.location.href)
+        if (smartphone()) {
+          console.log('smartphone')
+          url.searchParams.set('device', 'mobile')
+        } else {
+          console.log('personal computer')
+          url.searchParams.set('device', 'pc')
+        }
+      </script>
+      <script>
+        document.write('<div class="banner" id="banner_popvideo"><div style="position: relative;"><div class="remove_popvideo" onclick="removepopvideo()"><span class="remove_popvideo_text"><svg width="20" height="20" viewBox="0, 0, 400, 200" xmlns="http://www.w3.org/2000/svg" class="remove_popvideo_svg">  <line x1="0" y1="0" x2="250" y2="250" stroke-width="20"></line>  <line x1="250" y1="0" x2="0" y2="250" stroke-width="20"></line></svg></span></div><p style="position: absolute; left: 2px; top: -22px;">人気の動画</p><iframe style="margin-right: 8px; margin-left: 8px; margin-top: 20px; margin-bottom: -4px;" width="320" height="180" src="https://www.youtube.com/embed/uaGTJAYZS7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div></div>');
+      </script>
+      <noscript>
+        <p
+          style="height: 8%; position: fixed; bottom: 3%; right: 3%; border-color: #000; border-width: 5px; background-color: #fff; font-size: 100%;">
+          JavaScriptが無効になっているため、このサイトの一部の機能が制限されています。<br>制限をなくすには、ブラウザの設定からJavaScriptを有効化してください</p>
+      </noscript>
 </body>
-</html>	
+
+</html>
