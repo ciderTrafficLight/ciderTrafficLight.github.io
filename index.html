@@ -187,10 +187,10 @@ div.side_fixed{
 <p>このチャンネルの活動については、基本的に東京都内のみ、としています（今は）。ただ、たまに東京都以外の場所にいったり、東京都内の信号を全部回ってしまった場合は周辺の県での活動をする場合もあります。</p>
 </div>
 <script>
-console.log(location.hash)
+//console.log(location.hash)
 if(location.hash == null) {
 const url = location.protocol + '//' + location.host + '#head'
-console.log(url)
+//console.log(url)
 document.getElementsByTagName('html').item(0).style.scrollBehavior = 'smooth'
 window.location.href= url
 }
@@ -210,7 +210,7 @@ window.open(link, '_blank')
   
 window.addEventListener('scroll',function(){
 var zahyou = window.pageYOffset
-console.log(zahyou)
+//console.log(zahyou)
   const tar = document.getElementById('side')
   if(zahyou > 608){
   tar.className = 'side_fixed'
@@ -230,10 +230,10 @@ console.log(zahyou)
 }
   const url = new URL(window.location.href)
   if(smartphone()){
-    console.log('smartphone')
+    //console.log('smartphone')
     url.searchParams.set('device', 'mobile')
   }else{
-    console.log('personal computer')
+    //console.log('personal computer')
     url.searchParams.set('device', 'pc')
   }
 </script>
